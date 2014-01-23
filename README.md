@@ -1,6 +1,6 @@
 heisenbot
 =========
 
-<b>The robotic turned druglord</b>
+<b>The robot turned druglord</b>
 
 =========
