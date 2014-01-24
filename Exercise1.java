@@ -8,9 +8,9 @@ import lejos.nxt.Button;
 import lejos.util.Delay;
 
 public class Exercise1 extends RobotConfig {
-
-	public static void main(String[] args) 
-	{
+	
+	public static void main(String[] args) {
+		
 		//RegulatedMotor left = Motor.B;
 		//RegulatedMotor right = Motor.C;
 		//DifferentialPilot pilot = new DifferentialPilot(56, 160, left, right);
@@ -20,16 +20,14 @@ public class Exercise1 extends RobotConfig {
 		
 		Delay.msDelay(1000);
 		
-		while(Button.ENTER.isUp())
-		{
-			SquareLeft();
+		while(Button.ENTER.isUp()) {
+			squareLeft();
 		}
 		
 		Delay.msDelay(1000);
 		
-		while(Button.ENTER.isUp())
-		{
-			SquareRight();
+		while(Button.ENTER.isUp()) {
+			squareRight();
 		}
 		
 	}

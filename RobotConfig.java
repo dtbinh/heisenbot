@@ -10,14 +10,36 @@ public class RobotConfig {
 	static RegulatedMotor right = Motor.C;
 	static DifferentialPilot pilot = new DifferentialPilot(56, 160, left, right);
 	
-	public static void SquareLeft() {
+	public static void go() {
+		pilot.travel(800, true);
+	}
+	
+	public static void stop() {
+		pilot.quickStop();
+	}
+	
+	public static void squareLeft() {
 		pilot.travel(200);
 		pilot.rotate(90);
 	}
 	
-	public static void SquareRight() {
+	public static void squareRight() {
 		pilot.travel(200);
 		pilot.rotate(-90);
 	}
-
+	
+	public static void avoidObstacleLeft() {
+		pilot.travel(-60);
+		pilot.rotate(90);
+	}
+	
+	public static void avoidObstacelRight() {
+		pilot.travel(-60);
+		pilot.rotate(-90);
+	}
+	
+	public static void avoidDeadEnd() {
+		pilot.travel(-60);
+		pilot.travel(180);
+	}
 }
