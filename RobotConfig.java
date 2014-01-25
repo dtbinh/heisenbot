@@ -8,7 +8,7 @@ public class RobotConfig {
         
         static RegulatedMotor left = Motor.B;
         static RegulatedMotor right = Motor.C;
-        static DifferentialPilot pilot = new DifferentialPilot(56, 160, left, right);
+        static DifferentialPilot pilot = new DifferentialPilot(56, 165, left, right);
         
         public static void stop() {
                 pilot.quickStop();
