@@ -16,7 +16,7 @@ public class Escape extends RobotConfig {
               
               RegulatedMotor left = Motor.B;
               RegulatedMotor right = Motor.C;
-              DifferentialPilot pilot = new DifferentialPilot(56, 160, left, right);
+              DifferentialPilot pilot = new DifferentialPilot(56, 165, left, right);
               TouchSensor t_left = new TouchSensor(SensorPort.S1);
               TouchSensor t_right = new TouchSensor(SensorPort.S2);
               UltrasonicSensor radar = new UltrasonicSensor(SensorPort.S3);
