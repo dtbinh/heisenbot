@@ -64,6 +64,6 @@ public class RobotConfig {
         
         public static void avoidDeadEnd() {
                 pilot.travel(-60);
-                pilot.travel(180);
+                pilot.rotate(180);
         }
 }
