@@ -1,0 +1,3 @@
+Left motor = Motor port B
+Right motor = Motor port C
+touch sensor array = Sensor port 1 & 2
