@@ -1,9 +1,9 @@
 package heisenbot.assessment2.ex2;
 
+import heisenbot.RobotConfig;
 import lejos.nxt.Button;
 import lejos.nxt.SensorPort;
 import lejos.nxt.TouchSensor;
-import heisenbot.assessment2.RobotConfig;
 
 public class TouchTurnLoop extends RobotConfig {
 

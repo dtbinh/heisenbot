@@ -1,6 +1,6 @@
 package heisenbot.assessment2.ex1;
 
-import heisenbot.assessment2.RobotConfig;
+import heisenbot.RobotConfig;
 import lejos.nxt.Button;
 import lejos.util.Delay;
 

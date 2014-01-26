@@ -1,5 +1,6 @@
 package heisenbot.assessment2.ex3;
 
+import heisenbot.RobotConfig;
 import lejos.nxt.Button;
 import lejos.nxt.Motor;
 import lejos.nxt.SensorPort;
@@ -8,7 +9,7 @@ import lejos.nxt.UltrasonicSensor;
 import lejos.robotics.RegulatedMotor;
 import lejos.robotics.navigation.DifferentialPilot;
 import lejos.util.Delay;
-import heisenbot.assessment2.RobotConfig;
+
 
 public class Escape extends RobotConfig {
 

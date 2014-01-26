@@ -1,7 +1,7 @@
 package heisenbot.assessment2.ex2;
 
 
-import heisenbot.assessment2.RobotConfig;
+import heisenbot.RobotConfig;
 import lejos.nxt.Button;
 import lejos.nxt.SensorPort;
 import lejos.nxt.SensorPortListener;
