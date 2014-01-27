@@ -4,11 +4,15 @@ import lejos.nxt.Motor;
 import lejos.robotics.RegulatedMotor;
 import lejos.robotics.navigation.DifferentialPilot;
 
-public class RobotConfig {
+public abstract class RobotConfig implements Runnable {
         
         static RegulatedMotor left = Motor.B;
         static RegulatedMotor right = Motor.C;
-        static DifferentialPilot pilot = new DifferentialPilot(56, 165, left, right);
+        protected static DifferentialPilot pilot = new DifferentialPilot(56, 165, left, right);
+        
+        protected static boolean running = true;
+        
+        
         
         public static void stop() {
                 pilot.quickStop();
