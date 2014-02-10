@@ -13,32 +13,81 @@ public class RobotConfig {
 	static LightSensor r_eye = new LightSensor(SensorPort.S2);
 	static int l_turnCondition = 36;
 	static int r_turnCondition = 40;
+	static int arcRad = 40;
+	static int arcAng = 20;
+	static int route = 0;
 	
-	public static boolean straightCondition() {
-		boolean run = false;
-		if(l_eye.readValue() > l_turnCondition && r_eye.readValue() > r_turnCondition) {
-			run = true;
-		}
-		return run;
+	public static void straight() {
+		heisenbot.travel(10, true);
 	}
 	
-	public static boolean leftCondition() {
-		boolean run = false;
-		if(l_eye.readValue() < l_turnCondition && r_eye.readValue() > r_turnCondition) {
-			run = true;
-		}
-		return run;
+	public static void juncStraight() {
+		heisenbot.travel(20);
+		straight();
+	}
+	public static void reverse() {
+		heisenbot.rotate(180);
+		straight();
 	}
 	
-	public static boolean rightCondition() {
-		boolean run = false;
-		if(l_eye.readValue() > l_turnCondition && r_eye.readValue() < r_turnCondition) {
-			run = true;
+	public static void both() {
+		heisenbot.quickStop();
+		System.out.println("junction");
+		if(route == 0) {
+			reverse();
+		} else if(route == 1) {
+			juncRight();
+		} else if(route == 2) {
+			juncLeft();
+		} else if(route == 3) {
+			juncLeft();
+		} else if(route == 4) {
+			reverse();
+		} else if(route == 5) {
+			juncLeft();
+		} else if(route == 6) {
+			reverse();
+		} else if(route == 7) {
+			juncLeft();
+		} else if(route == 8) {
+			juncStraight();
+		} else if(route == 9) {
+			juncRight();
+		} else if(route == 10) {
+			juncStraight();
+		} else if(route == 11) {
+			juncRight();
+		} else if(route == 12) {
+			juncStraight();
+		} else if(route == 13) {
+			juncRight();
+			route = 0;
 		}
-		return run;
+		
+		System.out.println("Junction successful");
 	}
 	
-	public static boolean bothCondition() {
+	public static void left() {
+		System.out.println("LEFT");
+		heisenbot.arc(arcRad, arcAng, false);
+	}
+	
+	public static void juncLeft() {
+		heisenbot.travel(75);
+		heisenbot.rotate(90);
+	}
+	
+	public static void right() {
+		System.out.println("RIGHT");
+		heisenbot.arc(-arcRad, -arcAng, false);
+	}
+	
+	public static void juncRight() {
+		heisenbot.travel(75);
+		heisenbot.rotate(-90);
+	}
+	
+	public static boolean juncCheck() {
 		boolean run = false;
 		if(l_eye.readValue() < l_turnCondition && r_eye.readValue() < r_turnCondition) {
 			run = true;
@@ -46,22 +95,18 @@ public class RobotConfig {
 		return run;
 	}
 	
-	public static void explore() {
-		heisenbot.travel(10);
-		heisenbot.rotate(30);
-	}
-	
 	public static void solveHairpinLeft() {
-		heisenbot.quickStop();
+		System.out.println("HAIRPIN LEFT");
 		heisenbot.travel(60);
 		heisenbot.rotate(70);
-	}
+	}					
 	
 	public static void solveHairpinRight() {
-		heisenbot.quickStop();
+		System.out.println("HAIRPIN RIGHT");
 		heisenbot.travel(60);
 		heisenbot.rotate(-70);
 	}
 	 
 	
 }
+
