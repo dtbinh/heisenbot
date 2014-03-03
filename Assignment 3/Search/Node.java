@@ -5,11 +5,7 @@ import java.util.ArrayList;
 public class Node<Action, State>  {
 	private Action _action;
 	private State _state;
-	private Node<Action, State> _prevNode; 
-	
-	public static void main(String[] args) {
-		
-	}
+	private Node<Action, State> _prevNode;
 	
 	public Node(State _state) {
 		this(null, _state, null);
@@ -42,4 +38,18 @@ public class Node<Action, State>  {
 		return new ArrayList<Action>();
 	}
 
+	public String routeToString() {
+		StringBuffer nodeStr = new StringBuffer();
+		if(_prevNode != null) {
+			nodeStr.append("Action: " + _action + ", State: " + _state + ", Previous Node: " + _prevNode.routeToString());
+		} else {
+			nodeStr.append("State: " + _state);
+		}
+		return nodeStr.toString();
+	}
+	
+	public String toString() {
+		return "Action: " + _action + ", State: " + _state; 
+	}
+	
 }
