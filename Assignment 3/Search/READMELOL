@@ -1,0 +1,14 @@
+STRUCTURAL NOTES:
+
+
+Ok, the State is specific to the problem, e.g an eightPuzzle object is a state in the eightpuzzle problem.
+The reason this works is because GENERICS.
+
+Node.java - contains the current state object and the action made to get there
+stackAgenda.java - contains some kind of list (stack list) of nodes to be explored. Depth First Search
+queueAgenda - contains some kind of Queue list of nodes to be explored. Breadth First Search
+
+IF WE CAN GET THESE THREE WOKRING. THEN WE CAN WRITE A BFS.java and a DFS.java and potentially even an AStar.java
+depending on time
+
+lets focus on this framework.
