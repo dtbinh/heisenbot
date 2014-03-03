@@ -1,49 +1,38 @@
 package search;
 
 import java.util.Iterator;
+import java.util.Stack;
 
 import rp13.search.interfaces.Agenda;
-import search.State;
 
+public class stackAgenda<ItemT> implements Agenda<ItemT> {
 
-public class stackAgenda<State> implements Agenda<State> {  //DFS
-	
-	private State[] stackAgenda;
-
-	public stackAgenda() {
-		
-	}
+	private Stack<ItemT> stack = new Stack<ItemT>();
 	
 	@Override
-	public Iterator<State> iterator() {
-		return this.iterator();
+	public Iterator iterator() {
+		return stack.iterator();
 	}
 
 	@Override
-	public void push(State _item) {
-		stackAgenda[stackAgenda.length + 1] = _item;
-		
+	public void push(ItemT _item) {
+		stack.push(_item);
 	}
 
 	@Override
-	public State pop() {
-		// Returns the next state from the agenda and deletes it
-		
-		return null;
+	public ItemT pop() {
+		return stack.pop();
 	}
 
 	@Override
 	public boolean isEmpty() {
-		// TODO Auto-generated method stub
-		return false;
+		return stack.isEmpty();
 	}
 
 	@Override
-	public boolean contains(State _item) {
-		// TODO Auto-generated method stub
-		return false;
+	public boolean contains(Object _item) {
+		return stack.contains(_item);
 	}
-
 
 
 }
